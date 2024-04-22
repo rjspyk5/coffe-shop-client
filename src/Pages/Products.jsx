@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import bg from "../assets/images/more/4.png";
 import { BsCupHot } from "react-icons/bs";
+import { useEffect, useState } from "react";
 
 export const Products = () => {
+  const [coffes, setcoffes] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/coffes")
+      .then((res) => res.json())
+      .then((data) => setcoffes(data));
+  }, []);
+
   return (
     <div
       className="mt-10 bg-contain bg-no-repeat"
