@@ -9,6 +9,23 @@ export const Add = () => {
     const taste = form.get("Taste");
     const details = form.get("Details");
     const photo = form.get("photo");
+    fetch("http://localhost:5000/coffes", {
+      method: "post",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        coffeName,
+        supplier,
+        catagory,
+        chef,
+        taste,
+        details,
+        photo,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
   };
   return (
     <div className="flex justify-center">
