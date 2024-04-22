@@ -1,4 +1,3 @@
-import React from "react";
 import navBg from "../assets/images/more/15.jpg";
 import logo from "../assets/images/more/logo1.png";
 

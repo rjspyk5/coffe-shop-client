@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
 import bg from "../assets/images/more/4.png";
+import { BsCupHot } from "react-icons/bs";
+
 export const Products = () => {
   return (
     <div
@@ -11,6 +14,15 @@ export const Products = () => {
           <h1 className="text-3xl font-semibold text-center text-[#331A15] font-rancho">
             Our Popular Products
           </h1>
+          <div className="flex justify-center">
+            <Link
+              to="/add"
+              className="bg-[#E3B577] flex items-center gap-1 text-white text-center font-rancho px-2 py-[2px] rounded-md border border-[#331A15]"
+            >
+              Add Coffe
+              <BsCupHot className="text-[#331A15]" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
