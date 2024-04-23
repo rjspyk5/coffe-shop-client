@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import bg from "../assets/images/more/4.png";
 import { BsCupHot } from "react-icons/bs";
 import { useEffect, useState } from "react";
+import { CoffeCard } from "../Components/CoffeCard";
 
 export const Products = () => {
   const [coffes, setcoffes] = useState([]);
@@ -13,7 +14,7 @@ export const Products = () => {
 
   return (
     <div
-      className="mt-10 bg-contain bg-no-repeat"
+      className="mt-10 bg-no-repeat"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="flex justify-center ">
@@ -32,6 +33,12 @@ export const Products = () => {
             </Link>
           </div>
         </div>
+      </div>
+
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 max-w-[1000px] mt-9 mx-auto">
+        {coffes.map((el) => (
+          <CoffeCard key={el._id} coffeDetails={el} />
+        ))}
       </div>
     </div>
   );
