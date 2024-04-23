@@ -14,7 +14,7 @@ export const Products = () => {
 
   return (
     <div
-      className="mt-10 bg-no-repeat"
+      className="mt-10  bg-no-repeat"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="flex justify-center ">
