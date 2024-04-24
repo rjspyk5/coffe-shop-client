@@ -24,8 +24,10 @@ export const routes = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/view/product/:id",
+        path: "/coffe/:id",
         element: <ProductDetials />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coffe/${params.id}`),
       },
       {
         path: "/edit/:id",

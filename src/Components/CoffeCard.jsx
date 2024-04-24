@@ -12,7 +12,7 @@ export const CoffeCard = ({
         <p>Price: {price}</p>
       </div>
       <div className="join join-vertical">
-        <Link to={`/view/product/${_id}`} className="btn join-item">
+        <Link to={`/coffe/${_id}`} className="btn join-item">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
