@@ -1,6 +1,26 @@
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+
 export const Login = () => {
+  const { signUp } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
+    const form = new FormData(e.target);
+    const email = form.get("email");
+    const pass = form.get("pass");
+    signUp(email, pass)
+      .then((result) => {
+        console.log(result.user);
+        const user = { email };
+        fetch("http://localhost:5000/users", {
+          method: "post",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(user),
+        })
+          .then((res) => res.json())
+          .then((r) => console.log(r));
+      })
+      .catch((err) => console.log(err));
   };
   return (
     <div>
