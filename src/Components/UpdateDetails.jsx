@@ -5,11 +5,12 @@ export const UpdateDetails = () => {
     e.preventDefault();
     const form = new FormData(e.target);
     const coffeName = form.get("CoffeName");
+    const photo = form.get("Photo");
 
     fetch(`http://localhost:5000/coffe/${data._id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ coffeName }),
+      body: JSON.stringify({ coffeName, photo }),
     })
       .then((res) => res.json())
       .then((res) => console.log(res));
