@@ -11,7 +11,7 @@ export const Add = () => {
     const catagory = form.get("Catagory");
     const chef = form.get("Chef");
     const taste = form.get("Taste");
-    const details = form.get("Details");
+    const price = form.get("price");
     const photo = form.get("photo");
     fetch("http://localhost:5000/coffes", {
       method: "post",
@@ -24,7 +24,7 @@ export const Add = () => {
         catagory,
         chef,
         taste,
-        details,
+        price,
         photo,
       }),
     }).then(() => e.target.reset());
@@ -95,12 +95,12 @@ export const Add = () => {
                   className="w-full p-1 mb-3"
                 />
                 <br />
-                <label htmlFor="name">Details</label>
+                <label htmlFor="name">Price</label>
                 <br />
                 <input
-                  name="Details"
+                  name="price"
                   type="text"
-                  placeholder="Enter Coffe Details"
+                  placeholder="Enter Coffe price"
                   className="w-full p-1 mb-3"
                 />
                 <br />
