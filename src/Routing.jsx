@@ -4,7 +4,8 @@ import { Home } from "./Pages/Home";
 import { Add } from "./Pages/Add";
 import { Login } from "./Pages/Login";
 import { ProductDetials } from "./Components/ProductDetials";
-import { Edit } from "./Components/Edit";
+
+import { UpdateDetails } from "./Components/UpdateDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -31,7 +32,9 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/edit/:id",
-        element: <Edit />,
+        element: <UpdateDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coffe/${params.id}`),
       },
     ],
   },
