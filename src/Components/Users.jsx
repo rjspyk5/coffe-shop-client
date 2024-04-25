@@ -1,7 +1,8 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 export const Users = () => {
+  const navigate = useNavigate();
   const data = useLoaderData();
   console.log(data);
   return (
@@ -25,7 +26,7 @@ export const Users = () => {
                   <td>{el.email}</td>
                   <td>{el?.createdAt}</td>
                   <td className="flex justify-center items-center gap-5">
-                    <button>
+                    <button onClick={() => navigate(`/user/${el._id}`)}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"

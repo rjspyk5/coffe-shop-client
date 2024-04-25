@@ -7,6 +7,7 @@ import { ProductDetials } from "./Components/ProductDetials";
 
 import { UpdateDetails } from "./Components/UpdateDetails";
 import { Users } from "./Components/Users";
+import { UserDetails } from "./Components/UserDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -41,6 +42,12 @@ export const routes = createBrowserRouter([
         path: "/users",
         element: <Users />,
         loader: () => fetch(`http://localhost:5000/users`),
+      },
+      {
+        path: "/user/:id",
+        element: <UserDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/user/${params.id}`),
       },
     ],
   },
