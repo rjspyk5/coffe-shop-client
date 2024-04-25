@@ -6,6 +6,7 @@ import { Login } from "./Pages/Login";
 import { ProductDetials } from "./Components/ProductDetials";
 
 import { UpdateDetails } from "./Components/UpdateDetails";
+import { Users } from "./Components/Users";
 
 export const routes = createBrowserRouter([
   {
@@ -35,6 +36,11 @@ export const routes = createBrowserRouter([
         element: <UpdateDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/coffe/${params.id}`),
+      },
+      {
+        path: "/users",
+        element: <Users />,
+        loader: () => fetch(`http://localhost:5000/users`),
       },
     ],
   },

@@ -1,7 +1,9 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+  const navlink = useNavigate();
   const { signUp } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
@@ -18,9 +20,9 @@ export const Login = () => {
           body: JSON.stringify(user),
         })
           .then((res) => res.json())
-          .then((r) => console.log(r));
+          .then(() => navlink("/users"));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => alert(err));
   };
   return (
     <div>
