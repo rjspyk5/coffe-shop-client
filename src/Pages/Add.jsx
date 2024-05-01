@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export const Add = () => {
@@ -13,12 +14,8 @@ export const Add = () => {
     const taste = form.get("Taste");
     const price = form.get("price");
     const photo = form.get("photo");
-    fetch("http://localhost:5000/coffes", {
-      method: "post",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
+    axios
+      .post("http://localhost:5000/coffes", {
         coffeName,
         supplier,
         catagory,
@@ -26,8 +23,8 @@ export const Add = () => {
         taste,
         price,
         photo,
-      }),
-    }).then(() => e.target.reset());
+      })
+      .then((res) => console.log(res.data));
   };
   return (
     <>

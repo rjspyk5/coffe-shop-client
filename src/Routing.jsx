@@ -8,6 +8,8 @@ import { ProductDetials } from "./Components/ProductDetials";
 import { UpdateDetails } from "./Components/UpdateDetails";
 import { Users } from "./Components/Users";
 import { UserDetails } from "./Components/UserDetails";
+import { Users2 } from "./Components/Users2";
+import { useQuery } from "@tanstack/react-query";
 
 export const routes = createBrowserRouter([
   {
@@ -48,6 +50,10 @@ export const routes = createBrowserRouter([
         element: <UserDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/user/${params.id}`),
+      },
+      {
+        path: "/users2",
+        element: <Users2 />,
       },
     ],
   },

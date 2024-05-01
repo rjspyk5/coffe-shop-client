@@ -4,7 +4,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 export const Users = () => {
   const navigate = useNavigate();
   const data = useLoaderData();
-  console.log(data);
+
   return (
     <div>
       <div className="overflow-x-auto">
